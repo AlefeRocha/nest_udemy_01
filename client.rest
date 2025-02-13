@@ -1,0 +1,35 @@
+@baseUrl = http://localhost:3000
+
+
+# Messages
+### List all messages
+GET {{baseUrl}}/messages
+# ?limit=30
+# &offset=20
+
+### Get one message by ID
+GET {{baseUrl}}/messages/3f57ae78-4265-4f9b-bb49-c73f4bd32e3e
+
+### Create one message
+POST {{baseUrl}}/messages
+Content-Type: application/json
+
+{
+    "text": "Este é um recado NOVO, e é o terceiro",
+    "by": "Alefe",
+    "to": "Simone"
+}
+
+### Update one message by ID
+PATCH {{baseUrl}}/messages/30a06e9f-be01-432a-85f8-bf0ef663580f
+Content-Type: application/json
+
+{
+    "text": "Este é um recado que foi ALTERADO",
+    "by": "Alefe",
+    "to": "Simone",
+    "read": true
+}
+
+### Delete one message by ID
+DELETE {{baseUrl}}/messages/466d0432-5e20-4714-81c7-084fd160d1bc
