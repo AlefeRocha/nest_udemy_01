@@ -8,28 +8,28 @@ GET {{baseUrl}}/messages
 # &offset=20
 
 ### Get one message by ID
-GET {{baseUrl}}/messages/3f57ae78-4265-4f9b-bb49-c73f4bd32e3e
+GET {{baseUrl}}/messages/e4b6738f-ac80-460e-8d88-f6f42bc30313
 
 ### Create one message
 POST {{baseUrl}}/messages
 Content-Type: application/json
 
 {
-    "text": "Este é um recado NOVO, e é o terceiro",
+    "text": "Este é um recado NOVO para o Max! E é a 6ª msg.",
     "by": "Alefe",
-    "to": "Simone"
+    "to": "Max"
 }
 
 ### Update one message by ID
-PATCH {{baseUrl}}/messages/30a06e9f-be01-432a-85f8-bf0ef663580f
+PATCH {{baseUrl}}/messages/052fc188-5613-426d-8e86-5ff21bc428af
 Content-Type: application/json
 
 {
-    "text": "Este é um recado que foi ALTERADO",
+    "text": "Este é um recado NOVO para o Max!",
     "by": "Alefe",
-    "to": "Simone",
-    "read": true
+    "to": "Max",
+    "read": false
 }
 
 ### Delete one message by ID
-DELETE {{baseUrl}}/messages/466d0432-5e20-4714-81c7-084fd160d1bc
+DELETE {{baseUrl}}/messages/2ca7e182-4c78-4bad-b5a4-cf05d63957ed
