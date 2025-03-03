@@ -19,7 +19,6 @@ export class MessagesController {
 
   @Get()
   findAll(@Query() paginationDto: PaginationDto ) {
-    // return `This route returns all the messages! - Limit=${limit} | Offset=${offset}`;
     const allMessages = this.messagesService.findAll(paginationDto)
     return allMessages;
   }
