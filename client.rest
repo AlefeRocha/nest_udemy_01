@@ -33,3 +33,26 @@ Content-Type: application/json
 
 ### Delete one message by ID
 DELETE {{baseUrl}}/messages/2ca7e182-4c78-4bad-b5a4-cf05d63957ed
+
+
+#
+
+
+# Person
+### List all persons
+GET {{baseUrl}}/person
+# ?limit=30
+# &offset=20
+
+### Get one person by ID
+GET {{baseUrl}}/person/4ae13090-6a01-41c9-8833-ad0067c3a0ae
+
+### Create one person
+POST {{baseUrl}}/person
+Content-Type: application/json
+
+{
+    "name": "Alefe Rocha Tavares",
+    "email": "alefe@gmail.com",
+    "password": "abc123"
+}

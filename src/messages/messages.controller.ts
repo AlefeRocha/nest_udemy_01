@@ -6,21 +6,22 @@ import {
   Param,
   Patch,
   Post,
+  Query,
 } from '@nestjs/common';
 import { MessagesService } from './messages.service';
 import { CreateMessageDto } from './dto/create-message.dto';
 import { UpdateMessageDto } from './dto/update-message.dto';
+import { PaginationDto } from 'src/common/dto/pagination.dto';
 
 @Controller('messages')
 export class MessagesController {
   constructor(private readonly messagesService: MessagesService) {}
 
   @Get()
-  findAll() {
-    // findAll(@Query() pagination: any): string {
-    // const { limit = 10, offset = 0 } = pagination;
+  findAll(@Query() paginationDto: PaginationDto ) {
     // return `This route returns all the messages! - Limit=${limit} | Offset=${offset}`;
-    return this.messagesService.findAll();
+    const allMessages = this.messagesService.findAll(paginationDto)
+    return allMessages;
   }
 
   @Get(':id')
